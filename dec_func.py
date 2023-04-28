@@ -3,8 +3,8 @@ from BST import BinarySearchTree
 def list_to_bst(func):
     def wrapper(*args):
         source = func(*args)
-        root = source[len(source) // 2]
-        source.remove(root)
+        root = source[len(source) // 2] #Declare root at approximate middle of list
+        source.remove(root) #Remove the root value from list to prevent creation of same node twice
         bst = BinarySearchTree(root)
         for num in source:
             bst.add_node(num)
